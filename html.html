@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        @font-face {
+            font-family: 'Autography';
+            src: url('Autography.woff2') format('woff2'),
+                 url('Autography.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        
+
+        /* Header */
+        .header {
+            width: 100%;
+            height: 100vh;
+            background: #252525;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 5%;
+            overflow: hidden;
+        }
+
+        .header::after {
+    content: "";
+    position: absolute;
+    left: 50%; /* Starts from the middle */
+    width: 50%; /* Stretches to the right */
+    height: 100%;
+    background: url('Screenshot 2025-03-15 230653.png') no-repeat center center / cover;
+}
+        /* Name Box */
+.name-box {
+    position: absolute;
+    left: 5%; /* Keeps it left-aligned */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9;
+}
+    /* Your existing styles are here... */
+
+ /* Name Animation */
+ .name {
+    display: flex;
+    flex-direction: column; /* Stack them vertically */
+    font-size: 6rem;
+    font-weight: bold;
+    text-align: left; /* Align to the left */
+}
+
+.name-first {
+    font-family: 'Playfair Display', serif;
+}
+
+.name-last {
+    font-family: 'Playfair Display', serif;
+    margin-top: -10px; /* Adjust spacing */
+}
+
+/* Portfolio Text Styling */
+.name-box h3 {
+    font-family: 'Playfair Display', ; /* New font for Portfolio */
+    font-size: 2rem; /* Adjust size */
+    margin-top: 20px; /* Increased space */
+    font-weight: normal;
+    letter-spacing: 3px; /* Slight spacing for a sleek look */
+}
+/* Portfolio Text Styling */
+.name-box h3 {
+    font-family: 'Montserrat', ; /* Change this to any font you prefer */
+    font-size: 2rem; /* Adjust size as needed */
+    margin-top: 30px; /* Increased space from name */
+    font-weight: bold;
+    letter-spacing: 3px; /* Spacing for a sleek look */
+    text-transform: uppercase; /* Keeps it capitalized */
+}
+.name-box h3 {
+    font-family: 'Montserrat',;
+}
+
+
+    /* Creates the invisible line effect */
+    .name span {
+        display: inline-block;
+        position: relative;
+    }
+
+    .name span::after {
+        content: attr(data-text); /* Duplicates the text */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        color: white;
+        animation: revealText 1.5s ease-out forwards;
+    }
+
+    /* Animation Keyframes */
+    @keyframes revealText {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    /* Contact Section */
+    .contact-section {
+        width: 100%;
+        background: black;
+        color: white;
+        padding: 15px 0;
+        font-size: 1rem;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+    }
+
+    .contact-info {
+        font-size: 1rem;
+    }
+        /* Quote Section */
+        .quote {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 80px auto 50px;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 90%;
+            margin-top: 80px;
+            margin-bottom: 120px;
+        }
+
+        .about-text {
+            padding: 40px;
+            width: 50%;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .about-image {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 10px;
+        }
+        
+        .resume-section {
+    text-align: center;
+    margin: 100px auto;
+    width: 90%;
+    padding: 40px;
+  border-radius: 10px;
+}
+
+.resume-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.resume-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: #3f0097;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.resume-button:hover {
+    background: hsl(299, 53%, 37%);
+}
+
+        /* Projects Section */
+        .projects-section {
+            text-align: center;
+            margin: 100px auto;
+            width: 90%;
+        }
+
+        .projects-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .project {
+            width: 30%;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* Hover Effect */
+        .project:hover {
+            transform: scale(1.1);
+        }
+
+        .project img {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+
+        /* Popup Gallery */
+        .popup-gallery {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 10000;
+        }
+
+        /* Popup Container - Centered & Responsive */
+.popup-content {
+    display: flex;
+    flex-wrap: wrap; /* Allows images to wrap instead of overflow */
+    justify-content: center;
+    align-items: center;
+    max-width: 90vw; /* Ensures content fits within screen width */
+    max-height: 90vh; /* Ensures content fits within screen height */
+    overflow: auto; /* Adds scroll if needed */
+}
+
+/* Popup Image Styles - Properly Contained */
+.popup-content img {
+    max-width: 100%; /* Ensures image does not exceed popup width */
+    max-height: 80vh; /* Ensures image does not exceed viewport height */
+    object-fit: contain; /* Maintains aspect ratio */
+    display: block; /* Prevents unwanted gaps */
+    margin: 10px; /* Adds slight spacing */
+    border-radius: 10px;
+}
+
+
+/* Add Hover Title Effect */
+.project {
+    position: relative;
+    width: 30%;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.project:hover {
+    transform: scale(1.1);
+}
+
+/* Hover Title Styling */
+.project::after {
+    content: attr(data-title); /* Shows the title on hover */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project:hover::after {
+    opacity: 1; /* Shows the title when hovering */
+}
+/* Increase spacing above and below the quote */
+.quote {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 150px auto 80px; /* Increased margin to add more space */
+}
+
+/* Increase spacing between the quote and about section */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    margin-top: 120px; /* Increased from 80px to 120px */
+    margin-bottom: 150px; /* Increased from 120px */
+}
+
+    </style>
+</head>
+
+<body>
+
+ 
+    <!-- Background Header -->
+    <div class="header">
+        <div class="name-box">
+            <h1 class="name">
+                <div class="name-first">Sharanya</div>
+                <div class="name-last">Sinha</div>
+                <h3>PORTFOLIO</h3>
+            </h1>            
+        </div>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="quote">"I don't just create—I put a little piece of my chaos into everything I make."</div>
+
+    <!-- About Section -->
+<div class="about-section">
+    <div class="about-text">
+        <h2>About</h2>
+        <p>
+            Hi, I'm Sharanya Sinha, a passionate creative with a love for design, storytelling, and visual aesthetics. I believe that every project I work on is a reflection of my personality—structured yet chaotic, elegant yet bold. Whether it’s designing a book cover, crafting a magazine layout, or building a brand identity, I strive to create something that leaves an impact.
+        </p>
+    </div>
+    <div class="about-image">
+        <img src="WhatsApp Image 2025-03-16 at 23.10.00.jpeg">
+    </div>
+</div>
+
+<!-- Resume Section -->
+<div class="resume-section">
+    <h2 class="resume-title">Resume</h2>
+    <p class="resume-text">
+        Take a look at my professional experience, skills, and achievements. Download my resume below:
+    </p>
+    <a href="Resume Sharanya SInha.pdf" download="Sharanya_Sinha_Resume.pdf" class="resume-button">Download Resume</a>
+</div>
+
+<!-- Projects Section -->
+<div class="projects-section">
+    <h2 class="projects-title">My Projects</h2>
+    <div class="projects-container">
+        <div class="project" data-project="mockup1" data-title="Magazine Mockups">
+            <img src="major mockup magazine copy.jpg" alt="Magazine">
+        </div>
+        <div class="project" data-project="mockup2" data-title="Book Cover Mockups">
+            <img src="book cover mockup copy.jpg" alt="Project 2">
+        </div>
+        <div class="project" data-project="mockup3" data-title="Sankalp India Foundation">
+            <img src="mockup sankalp copy.jpg" alt="Project 3">
+        </div>
+    </div>
+    
+
+
+    <!-- Popup Gallery -->
+    <div class="popup-gallery" id="popupGallery">
+        <div class="popup-content" id="popupContent"></div>
+        <button class="close-popup" onclick="closePopup()">Close</button>
+    </div>
+
+  <!-- Contact Section -->
+<div class="contact-section">
+    <div class="contact-info">
+        Email: sharanyasinha2005@gmail.com | Phone: +91 9650767818 | 
+        LinkedIn: <a href="https://www.linkedin.com/in/sharanya-sinha-63a5652bb/" target="_blank" style="color: white; text-decoration: none;">linkedin.com/in/sharanyasinha</a>
+    </div>
+</div>
+
+    <script>
+     const projectImages = {
+    "mockup1": ["2nd mockup of magazine copy.jpg", "magazine mockup copy.jpg", "final magazine mockup.jpg"],
+    "mockup2": ["second mockup paperback copy.jpg", "third mockup which shows the spine and back cover nicely copy.jpg", "4th mockup spine copy.jpg"],
+    "mockup3": ["brand style guide_removed_page-0001.jpg", "brand style guide_removed_page-0002.jpg", "brand style guide_removed_page-0007.jpg","brand style guide_removed_page-0006.jpg"]
+};
+
+function openPopup(projectKey) {
+    document.getElementById("popupGallery").style.display = "flex";
+    document.getElementById("popupContent").innerHTML = projectImages[projectKey]
+        .map(img => `<img src="${img}" alt="Project Image">`)
+        .join("");
+}
+
+
+
+function closePopup() {
+    document.getElementById("popupGallery").style.display = "none";
+}
+
+document.querySelectorAll(".project").forEach(project => 
+    project.addEventListener("click", () => openPopup(project.dataset.project))
+);
+   </script>
+
+</body>
+</html>
